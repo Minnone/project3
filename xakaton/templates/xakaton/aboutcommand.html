@@ -1,0 +1,142 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'aboutTeam.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-items">
+            <img src="/static/LOGO.svg" alt="" class="logo">
+            <a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project1">О проекте</a>
+        </div>
+        <button class="menu-toggle">Меню</button>
+        <nav class="desktop-nav">
+            <ul class="nav">
+                <li class="nav-item"><a href="{% url 'xakaton:xaki' %}" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutmirea' %}" class="nav-link">О миреа</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:registcommand' %}" class="nav-link">Команды</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project2">О проекте</a></li>
+                <li class="nav-item-link"><a href="{% url 'users:profile' %}" class="nav-link"><img src="/static/Group 89.svg" alt="" class="nav-profile-img"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2 class="about-text">
+            Подробнее о команде
+        </h2>
+        <div class="main-about-team">
+            <h2 class="main-text-team-up">Барбариски</h2>
+            <div class="team-list">
+                <div class="team">
+                <div class="team-members">
+                    <p class="team-text">5</p>
+                    <img src="/static/account-icon 1.svg" alt="" class="team-members-icon">
+                </div>
+                <div class="team-steks">
+                    <p class="team-text">с++   c   c#   kotlin   java script</p>
+                </div>
+                <div class="team-roles">
+                    <p class="team-text">1|backend  1|frontend  1|teamlead 1|tester  1|business analyst  </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="main-activhack-textareateam">
+            <div class="activhack">
+                <h4 class="activhack-text">
+                    Активный хакатон
+                </h4>
+                <div class="activhack-block">
+                    <h3 class="activhack-text-up">Хакатон от роснефти</h3>
+                    <div class="activhack-info">
+
+                            <div class="info-left">
+                                <div class="left">
+                                    <p class="text">Дата проведения:  22.10.24 - 24.10.24</p>
+                                </div>
+                                <div class="left">
+                                    <p class="text">Формат проведения: онлайн</p>
+                                </div>
+                                <div class="left">
+                                    <p class="text">Призовой фонд:  700000₽</p>
+                                </div>
+                            </div>
+                            <div class="info-right">
+                                <p class="text">🔥Хакатон от «Роснефти»</p>
+                                <p class="text">📍22 июля начнётся первый этап для<br> программистов-робототехников, и принять в нём<br> участие смогут студенты вузов и специалисты<br> отрасли</p>
+                                <p class="text">Для этого необходимо собрать команду до четырёх<br> человек старше 18 лет и зарегистрировать её на<br> сайте</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="textareateam">
+                <h4 class="textareateam-text">
+                    О команде
+                </h4>
+                <div class="textareateam-about">
+                    <div class="comment-text">
+                        <p class="comment">
+                            Барбариски — это команда молодых и креативных разработчиков, дизайнеров и предпринимателей, готовых к решению сложных задач с помощью технологий. Мы объединены общим стремлением к инновациям и желанием создать полезные и продуктивные решения для реальных проблем.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-members-team">
+            <p class="members-team-text">Состав команды</p>
+            <div class="members-team-users">
+                <div class="team-user">
+                    <img src="/static/account-icon 2.svg" alt="" class="user-icon">
+                    <p class="user-name">Иван Иванов</p>
+                    <p class="user-role">frontend</p>
+                </div>
+                <div class="team-user">
+                    <img src="/static/account-icon 2.svg" alt="" class="user-icon">
+                    <p class="user-name">Иван Иванов</p>
+                    <p class="user-role">backend</p>
+                </div>
+                <div class="team-user">
+                    <img src="/static/account-icon 2.svg" alt="" class="user-icon">
+                    <p class="user-name">Иван Иванов</p>
+                    <p class="user-role">teamlead</p>
+                </div>
+                <div class="team-user">
+                    <img src="/static/account-icon 2.svg" alt="" class="user-icon">
+                    <p class="user-name">Иван Иванов</p>
+                    <p class="user-role">tester</p>
+                </div>
+                <div class="team-user">
+                    <img src="/static/account-icon 2.svg" alt="" class="user-icon">
+                    <p class="user-name">Иван Иванов</p>
+                    <p class="user-role">business analyst</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+            <div class="footer-up">
+                <div class="footer-img-text">
+
+                    <img src="/static/LOGO.svg" alt="" class="footer-logo">
+                    <p class="footer-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex quidem consequuntur voluptatem mollitia?</p>
+                </div>
+                <div class="footer-links">
+                    <a href="" class="footer-vk"><img src="/static/Group 89.svg" alt="" class="footer-vk-img"></a>
+                    <a href="" class="footer-mirea"><img src="/static/Group 89.svg" alt="" class="footer-mirea-img"></a>
+                </div>
+            </div>
+            <div class="footer-down">
+                <hr class="footer-line">
+                <p class="footer-down-text">Copyright @2024</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

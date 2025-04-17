@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail</title>
+    <link rel="stylesheet" href="/static/addMail.css">
+</head>
+<body>
+    <section class="add-mail">
+        <div class="mail">
+            <img src="/static/Vector 1.svg" alt="" class="background-img">
+            <div class="mail2">
+                <p class="main-text">На указаный адрес электронной почты будет отправлено письмо для подтверждения личности</p>
+                <label for="" class="label-input"><input class="input" type="mail" id="mail-input" placeholder="Введите эл.почту" required></label>
+                <a href="{% url 'users:addmailcorrect' %}" class="btn-next">Продолжить</a>
+            </div>
+        </div>
+</body>
+</html>

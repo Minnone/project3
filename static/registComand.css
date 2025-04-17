@@ -1,0 +1,1364 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #340b68, #999999);
+    font-family: "Poppins", sans-serif;
+}
+
+html, body { height: 100%; margin: 0; }
+body { display: flex; flex-direction: column; }
+footer { margin-top: auto; } 
+
+section {
+    flex: 1; /* Позволяет секции занимать оставшееся пространство */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    background-color: rgba(7, 7, 7, 0.5);
+    padding: 10px;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; 
+}
+
+.nav-item {
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+.nav-items{
+    padding-left: 20px;
+    display: flex;
+    gap: 100px;
+}
+
+.nav-link,
+.nav-link-project1 {
+    display: block; 
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff; 
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+.nav-link-project1{
+    width: 105px;
+    padding-top: 20px;
+}
+
+.nav-link-project2 {
+    display: block; 
+    padding: 10px; 
+    text-decoration: none;
+    color: #ffffff; 
+    font-weight: 400;
+}
+
+.nav-item-link {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.logo {
+    max-width: 50px;
+}
+
+.menu-toggle {
+    display: none; /* Скрыть кнопку по умолчанию */
+    background-color: #302E2E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* main */
+
+.main{
+    display: flex;
+    gap: 115px;
+    padding: 55px 110px 0px 45px;
+}
+
+.main-hackregist-left{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.hackregist-left-text-up{
+
+    padding-bottom: 30px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.comandcreate{
+    display: flex;
+    padding-top: 40px;
+    justify-content: center;
+}
+
+.createButton{
+    background-color: #00000099;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    padding: 20px 50px 20px 50px;
+    margin-bottom: 30px;
+}
+
+.hackregist-left-block {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #00000099;
+    border-radius: 55px;
+    padding: 50px 40px 50px 30px;
+    width: 100%;
+}
+
+.left-block-text-up {
+    font-size: 28px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.left-block-text {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.left-data-range, .left-prize-range {
+    display: flex;
+    flex-direction: column; /* Настройте по необходимости для модального окна */
+    gap: 30px;
+}
+
+.custom-select { /* Это очень важно! Стилизует элементы выбора в ОБЕИХ областях */
+    display: flex; /* Добавлено для согласованности */
+        /* Добавлено для согласованности */
+    align-items: center; /* Добавлено для согласованности */
+    padding-top: 15px; /* Добавлено для согласованности */
+    width: 200px; /* Настройте по необходимости */
+    /* Пример границы */
+    padding: 5px;   /* Пример отступа */
+}
+
+
+.select-selected {
+    /* Стили для выбранного варианта */
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0; /* Пример фона */
+}
+
+.select-items {
+    /* Стили для элементов выпадающего списка */
+    display: none;
+    position: absolute; /* Важно для позиционирования выпадающего списка */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.select-items li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.select-items li:hover {
+    background-color: #f0f0f0;
+}
+
+
+.steks {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.steks-text {
+    color: #bdb7b7;
+    font-size: 18px;
+}
+
+.stek-item {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.stek-item.selected {
+    font-weight: bold;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 5px;
+}
+
+.input {
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    padding: 10px;
+    border: none;
+    color: #ffffff;
+    width: 80%;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+/* Стили модального окна */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    
+}
+
+.modal-content .custom-select .select-items { /* Целенаправленное стилизация выпадающего списка */
+    background-color: #00000099;
+    border-radius: 25px;
+    border: none; /* Убираем границу, если не нужна */
+}
+
+.modal-content .custom-select .select-items li {
+    color: rgb(255, 255, 255); /* Текст в выпадающем списке белый */
+}
+
+.modal-overlay.show {
+    display: block;
+}
+
+.modal-content .hackregist-left-text-up {
+    color: white; /* Белый цвет для h3 (Фильтры) в модальном окне */
+}
+
+.modal-content .left-block-text-up {
+    color: white; /* Белый цвет для h6 (Состав команды) в модальном окне */
+}
+
+.modal-content .left-block-text{
+    color: white;
+}
+.main-hackinfo-right{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.hackinfo-right-button{
+    background-color: #00000099;
+    border-radius: 55px;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 40px 10px 40px;
+}
+
+.hackinfo-right{
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+.hackinfo-right-text{
+    font-size: 32px;
+    color: #fff;
+}
+
+.blocks{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    padding:15px 0px 15px 0px;
+}
+
+.link-hack{
+    text-decoration: none;
+    color: #fff;
+    border-radius: 55px;
+    background-color: #5f5959;
+    padding: 10px 50px 10px 50px;
+}
+
+.activhack-block{
+    display: flex;
+    flex-direction: column;
+    margin-left: 75px;
+    background-color: #1C1C1C;
+    border-radius: 55px;
+}
+
+.activhack-text-up{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 32px;
+    color: white;
+    text-align: center;
+}
+
+.activhack-info {
+    display: flex;
+    gap: 30px;
+    background-color: #302E2E;
+    border-bottom-right-radius:55px;
+    border-bottom-left-radius:55px;
+}
+
+.team-members{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    background-color: #1C1C1C;
+    border-radius: 25px;
+    padding: 10px 20px 10px 20px;
+}
+
+.team-steks{
+    display: flex;
+    align-items: center;
+    gap:15px;
+    background-color: #1C1C1C;
+    border-radius: 25px;
+    padding: 10px 60px 10px 30px;
+}
+
+.team-roles{
+    display: flex;
+    align-items: center;
+    gap:15px;
+    background-color: #1C1C1C;
+    border-radius: 25px;
+    padding: 10px 60px 10px 30px;
+}
+
+.team-text{
+    font-size: 18px;
+    color: #fff;
+}
+
+.text{
+    font-size: 16px;
+    color: #fff;
+}
+
+.info-right{
+    background-color: #1C1C1CCC;
+    padding: 30px 15px 15px 5px;
+    line-height: 1.7;
+    border-bottom-right-radius:55px;
+}
+
+.info-left{
+    display: flex;
+    flex-direction: column;
+    gap:35px;
+    padding: 44px 30px;
+}
+
+
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 300px; /* Измените ширину по необходимости */
+  }
+  
+  .select-selected {
+    font-size: 14px; /* Уменьшение размера шрифта */
+    border: 1px solid #ccc;
+    padding: 5px 15px; /* Меньшие отступы */
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: #D9D9D9;
+    height: auto; /* Высота регулируется автоматически */
+    line-height: 1.5; /* Регулируйте высоту строки по необходимости */
+    min-width: 60px; /* Minimum width */
+    max-width: 150px;
+}
+  
+  .select-items {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон */
+    border-radius: 25px; /* Закруглённые углы */
+    bottom: 100%; /* Размещаем список над выбранным элементом */
+    left: 0; /* Выровнено по левому краю выбранного элемента */
+    z-index: 1;
+    width: 100%; /* Занять полную ширину */
+    max-height: 200px;
+    overflow-y: auto; /* Прокрутка, если элементов слишком много */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавим легкую тень для эффекта */
+  }
+  
+  .select-items li {
+    padding: 10px;
+    cursor: pointer;
+    list-style: none;
+    color: #fff; /* Цвет текста */
+    display: flex; /* Используем flexbox для выравнивания */
+    align-items: center; /* Выравниваем по центру */
+  }
+  
+  .select-items li:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Цвет при наведении */
+  }
+  
+  .select-hide {
+    display: none; /* Скрыть элементы по умолчанию */
+  }
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap:35px;
+    padding: 35px 80px 35px 80px;
+}
+
+.button-go{
+    background-color: #340b68;
+    font-size: 24px;
+    border-radius: 25px;
+    padding: 15px 70px 15px 70px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button-info{
+    background-color: #D9D9D9;
+    font-size: 24px;
+    border-radius: 25px;
+    padding: 15px 70px 15px 70px;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* footer */
+.footer {
+    background-color: rgb(32, 30, 30);
+    padding-top: 20px; /* Должен быть минимальным отступом, если это необходимо */
+}
+
+.footer-up {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-logo {
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.footer-text {
+    color: #ffffff;
+    font-size: 13px;
+    max-width: 500px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-down-text {
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+     
+    align-items: center; 
+    padding-right: 20px;
+    padding-bottom: 20px;
+    gap: 10px;
+}
+
+.footer-line {
+    margin: 0;
+    color: #000;
+}
+
+.open-filter-button{
+    background-color: #00000099;
+    border-radius: 55px;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 40px 10px 40px;
+}
+
+.modal-overlay {
+    display: none; /* Скрываем по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    z-index: 10; /* Находится поверх других элементов */
+}
+
+.modal-content {
+    display: none; /* Скрываем по умолчанию */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрируем модальное окно */
+    background-color: #44444499; /* Белый фон */
+    padding: 20px; /* Отступы */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Тень вокруг окна */
+    border-radius: 8px; /* Закругленные углы */
+    max-width: 400px; /* Ширина модального окна */
+    width: 90%; /* Ширина для маленьких экранов */
+}
+
+.modal-content h3,
+.modal-content h6 {
+    margin: 10px 0; /* Отступы для заголовков */
+    color: #340b68; /* Цвет заголовков */
+}
+
+.modal-content p {
+    margin: 5px 0; /* Отступы для параграфов */
+}
+
+/* Стили для кастомных селекторов внутри модального окна */
+.modal-content .custom-select {
+    position: relative; /* Для абсолютного позиционирования */
+    display: inline-block;
+    width: 100%; /* Полная ширина */
+    margin-bottom: 15px; /* Отступы между селекторами */
+}
+
+.modal-content .select-selected {
+    background-color: #f0f0f0; /* Цвет фона селекта */
+    padding: 10px;
+    border: 1px solid #ccc; /* Рамка */
+    border-radius: 4px; /* Закругление */
+    cursor: pointer; /* Изменение курсора */
+}
+
+/* Стили для активного состояния селекторов */
+.modal-content .select-selected:hover {
+    background-color: #e0e0e0; /* Цвет при наведении */
+}
+
+.modal-content .select-items {
+    display: none; /* Категории будут видны только при открытии формы */
+    position: absolute;
+    background-color: white; /* Цвет фона выпадающего списка */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 9; /* Чтобы выпадающий список был над другими элементами */
+    width: 100%;
+}
+
+.modal-content .select-items li {
+    padding: 10px; /* Отступы для элементов списка */
+    cursor: pointer; /* Изменение курсора */
+}
+
+/* Стили для кнопки закрытия модального окна */
+.close-modal-button {
+    background-color: #411717; /* Красный цвет */
+    color: white; /* Цвет текста */
+    border: none; /* Без бордеров */
+    padding: 10px; /* Отступы */
+    cursor: pointer; /* Изменение курсора */
+    font-size: 16px; /* Размер шрифта */
+    margin-top: 10px; /* Отступ сверху */
+    border-radius: 4px; /* Закругление */
+    display: block; /* Блочный элемент */
+    width: 100%; /* Полная ширина */
+}
+
+.close-modal-button:hover {
+    background-color: #e60000; /* Тёмный красный при наведении */
+}
+
+/* Когда модальное окно становится активным */
+.modal-overlay.active,
+.modal-content.active {
+    display: block; /* Показываем модальное окно */
+}
+
+@media (max-width: 3000px){
+    .nav-link-project2 {
+        display: none; 
+    }
+}
+
+@media (min-width: 1025px) {
+    .open-filter-button {
+        display: none; /* Показываем кнопку */
+    }
+
+    .main-hackregist-left {
+        display: block; /* Показываем блок с фильтрами */
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+    .open-filter-button {
+        display: block; /* Показываем кнопку */
+    }
+
+    .main-hackregist-left{
+        display: none; /* Скрываем блок с фильтрами */
+    }
+
+    .modal-content {
+        max-width: 95%; /* Ширина для меньших экранов */
+    }
+    
+    
+
+    .blocks{
+        padding-left: 70px;
+    }
+
+    .activhack-block{
+        display: flex;
+        flex-direction: column;
+        background-color: #1C1C1C;
+        border-radius: 55px;
+        align-items: center;
+    }
+    
+    
+}
+
+@media (max-width: 920px){
+    .blocks{
+        padding-left: 0px;
+        padding-right: 0;
+    }
+
+    .activhack-block{
+        display: flex;
+        flex-direction: column;
+        background-color: #1C1C1C;
+        border-radius: 55px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .activhack-text-up{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 32px;
+        color: white;
+        text-align: center;
+    }
+    
+    .activhack-info {
+        display: flex;
+        gap: 30px;
+        background-color: #302E2E;
+        border-bottom-right-radius:55px;
+        border-bottom-left-radius:55px;
+    }
+    
+    .team-members{
+        width: 70%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        gap:10px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 5px 10px 5px 10px;
+    }
+    
+    .team-steks{
+        display: flex;
+        align-items: center;
+        gap:15px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 10px 30px 10px 30px;
+    }
+    
+    .team-roles{
+        display: flex;
+        align-items: center;
+        gap:15px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 10px 20px 10px 20px;
+    }
+    
+    .team-text{
+        font-size: 14px;
+        color: #fff;
+    }
+    
+    .text{
+        font-size: 13px;
+        color: #fff;
+    }
+    
+    .info-right{
+        width: 90%;
+        height: 90%;
+        background-color: #1C1C1CCC;
+        padding: 30px 15px 15px 5px;
+        line-height: 1.7;
+        border-bottom-right-radius:55px;
+    }
+    
+    .info-left{
+        width: 90%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        padding: 20px 30px;
+    }
+
+    .button-go{
+        padding: 10px 22px 10px 22px;
+    }
+
+    .button-info{
+        padding: 10px 10px 10px 10px;
+    }
+
+}
+
+
+@media (max-width: 820px){
+    .blocks{
+        padding-left: 0;
+    }
+
+    .activhack-block{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        background-color: #1C1C1C;
+        border-radius: 55px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 850px) {
+    .nav {
+        gap: 40px; 
+    }
+
+}
+
+@media (max-width: 768px) {
+    .createButton{
+        padding: 20px 40px 20px 40px;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .hackinfo-right-text{
+        font-size: 24px;
+    }
+
+    .hackinfo-right{
+        gap:25px;
+    }
+
+    .blocks{
+        padding-left: 50px;
+        padding-right: 0;
+    }
+
+    .activhack-block{
+        display: flex;
+        flex-direction: column;
+        background-color: #1C1C1C;
+        border-radius: 55px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .activhack-text-up{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 32px;
+        color: white;
+        text-align: center;
+    }
+    
+    .activhack-info {
+        display: flex;
+        gap: 30px;
+        background-color: #302E2E;
+        border-bottom-right-radius:55px;
+        border-bottom-left-radius:55px;
+    }
+    
+    .team-members{
+        width: 70%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        gap:10px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 5px 10px 5px 10px;
+    }
+    
+    .team-steks{
+        display: flex;
+        align-items: center;
+        gap:15px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 10px 30px 10px 30px;
+    }
+    
+    .team-roles{
+        display: flex;
+        align-items: center;
+        gap:15px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 10px 20px 10px 20px;
+    }
+    
+    .team-text{
+        font-size: 14px;
+        color: #fff;
+    }
+    
+    .text{
+        font-size: 13px;
+        color: #fff;
+    }
+    
+    .info-right{
+        width: 90%;
+        height: 90%;
+        background-color: #1C1C1CCC;
+        padding: 30px 15px 15px 5px;
+        line-height: 1.7;
+        border-bottom-right-radius:55px;
+    }
+    
+    .info-left{
+        width: 90%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        padding: 20px 30px;
+    }
+
+    .button-go{
+        padding: 10px 22px 10px 22px;
+    }
+
+    .button-info{
+        padding: 10px 10px 10px 10px;
+    }
+
+    .modal-content {
+        max-width: 100%; /* Полная ширина на малых экранах */
+        padding: 15px; /* Уменьшаем отступы */
+    }
+
+
+    .menu-toggle {
+        display: block; /* Показать кнопку на мобильных экранах */
+        
+    }
+
+    .nav-link-project1 {
+        display: none; 
+        
+    }
+
+    .nav-link-project2 {
+        display: block; 
+        
+    }
+
+    .desktop-nav {
+        display: none; /* Скрыть навигацию по умолчанию */
+        flex-direction: column; /* Расположить элементы вертикально */
+    }
+
+    .desktop-nav.active {
+        display: flex; /* Показать навигацию при активации */
+    }
+    
+    .nav{
+        gap: 10px;
+    }
+}
+
+@media (max-width: 560px){
+    
+    .createButton{
+        padding: 20px 40px 20px 40px;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .hackinfo-right-text{
+        font-size: 20px;
+    }
+
+
+    .createButton{
+        padding: 10px 30px 10px 30px;
+    }
+
+    .blocks{
+        padding-left: 30px;
+        padding-right: 0;
+    }
+
+    .activhack-block{
+        display: flex;
+        flex-direction: column;
+        background-color: #1C1C1C;
+        border-radius: 55px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .activhack-text-up{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 22px;
+        color: white;
+        text-align: center;
+    }
+    
+    .activhack-info {
+        display: flex;
+        gap: 20px;
+        background-color: #302E2E;
+        border-bottom-right-radius:55px;
+        border-bottom-left-radius:55px;
+    }
+    
+    .team-members{
+        width: 70%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        gap:10px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 5px 10px 5px 10px;
+    }
+    
+    .team-steks{
+        display: flex;
+        align-items: center;
+        gap:15px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 10px 20px 10px 20px;
+    }
+    
+    .team-roles{
+        display: flex;
+        align-items: center;
+        gap:15px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 10px 10px 10px 10px;
+    }
+    
+    .team-members-icon{
+        width: 50%;
+    }
+
+    .team-text{
+        font-size: 14px;
+        color: #fff;
+    }
+    
+    
+    .info-right{
+        width: 90%;
+        height: 90%;
+        background-color: #1C1C1CCC;
+        padding: 30px 15px 15px 5px;
+        line-height: 1.7;
+        border-bottom-right-radius:55px;
+    }
+    
+    .info-left{
+        width: 90%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        padding: 20px 30px;
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        gap:35px;
+        padding: 15px 30px 15px 30px;
+    }
+    
+
+    .button-go{
+        padding: 10px 15px 10px 15px;
+        font-size: 16px;
+    }
+
+    .button-info{
+        font-size: 16px;
+        padding: 10px 15px 10px 15px;
+    }
+    .modal-content {
+        max-height: 80%; /* Ограничиваем высоту на очень маленьких экранах */
+        overflow-y: auto; /* Прокрутка содержимого */
+    }
+
+    .select-selected {
+        padding: 5px; /* Уменьшаем внутренний отступ для селекторов */
+    }
+} 
+
+@media (max-width: 480px) {
+    .blocks{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .createButton{
+        padding: 10px 30px 10px 30px;
+        font-size: 10px;
+        margin-bottom: 30px;
+    }
+
+    .hackinfo-right-text{
+        font-size: 16px;
+    }
+
+    .activhack-block{
+        display: flex;
+        flex-direction: column;
+        background-color: #1C1C1C;
+        border-radius: 55px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .activhack-text-up{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 22px;
+        color: white;
+        text-align: center;
+    }
+    
+    .activhack-info {
+        display: flex;
+        gap: 10px;
+        background-color: #302E2E;
+        border-bottom-right-radius:55px;
+        border-bottom-left-radius:55px;
+    }
+    
+    .team-members{
+        width: 70%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        gap:10px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 5px 10px 5px 10px;
+    }
+    
+    .team-steks{
+        display: flex;
+        align-items: center;
+        gap:15px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 10px 30px 10px 30px;
+    }
+    
+    .team-roles{
+        display: flex;
+        align-items: center;
+        gap:15px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 10px 20px 10px 20px;
+    }
+    
+    .team-text{
+        font-size: 12px;
+        color: #fff;
+    }
+    
+    .text{
+        font-size: 13px;
+        color: #fff;
+    }
+    
+    .info-right{
+        width: 90%;
+        height: 90%;
+        background-color: #1C1C1CCC;
+        padding: 30px 15px 15px 5px;
+        line-height: 1.7;
+        border-bottom-right-radius:55px;
+    }
+    
+    .info-left{
+        width: 90%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        padding: 20px 30px;
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        gap:35px;
+        padding: 15px 30px 15px 30px;
+    }
+    
+    .hackinfo-right{
+        gap: 10px;
+
+        
+    }
+
+    .button-go{
+        padding: 5px 12px 5px 12px;
+        font-size: 14px;
+    }
+
+    .button-info{
+        font-size: 14px;
+        padding: 5px 12px 5px 12px;
+    }
+
+    .modal-content {
+        max-height: 80%; /* Ограничиваем высоту на очень маленьких экранах */
+        overflow-y: auto; /* Прокрутка содержимого */
+    }
+
+    .select-selected {
+        padding: 5px; /* Уменьшаем внутренний отступ для селекторов */
+    }
+
+    .header {
+        
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-up {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-text {
+        padding-left: 20px;
+    }
+
+    .footer-links{
+        padding-left: 20px;
+    }
+
+    .logo{
+        display: none;
+    }
+}
+
+@media (max-width: 375px){
+    .blocks{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .modal-content {
+        max-height: 80%; /* Ограничиваем высоту на очень маленьких экранах */
+        overflow-y: auto; /* Прокрутка содержимого */
+    }
+
+    .select-selected {
+        padding: 5px; /* Уменьшаем внутренний отступ для селекторов */
+    }
+
+    .activhack-block{
+        display: flex;
+        flex-direction: column;
+        background-color: #1C1C1C;
+        border-radius: 55px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .activhack-text-up{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 22px;
+        color: white;
+        text-align: center;
+    }
+    
+    .activhack-info {
+        display: flex;
+        gap: 0px;
+        background-color: #302E2E;
+        border-bottom-right-radius:55px;
+        border-bottom-left-radius:55px;
+    }
+    
+    .team-members{
+        width: 70%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        gap:10px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 5px 10px 5px 10px;
+    }
+    
+    .team-steks{
+        display: flex;
+        align-items: center;
+        gap:15px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 10px 20px 10px 20px;
+    }
+    
+    .team-roles{
+        display: flex;
+        align-items: center;
+        gap:15px;
+        background-color: #1C1C1C;
+        border-radius: 25px;
+        padding: 10px 10px 10px 10px;
+    }
+    
+    .team-members-icon{
+        width: 60%;
+    }
+
+    .team-text{
+        font-size: 12px;
+        color: #fff;
+    }
+    
+    .text{
+        font-size: 13px;
+        color: #fff;
+    }
+    
+    .info-right{
+        width: 90%;
+        height: 90%;
+        background-color: #1C1C1CCC;
+        padding: 30px 15px 15px 5px;
+        line-height: 1.7;
+        border-bottom-right-radius:55px;
+    }
+    
+    .info-left{
+        width: 90%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        padding: 20px 30px;
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        gap:35px;
+        padding: 15px 30px 15px 30px;
+    }
+    
+
+    .button-go{
+        padding: 5px 12px 5px 12px;
+        font-size: 14px;
+    }
+
+    .button-info{
+        font-size: 14px;
+        padding: 5px 12px 5px 12px;
+    }
+}

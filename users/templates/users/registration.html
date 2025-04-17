@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="{% static 'regist.css' %}">
+</head>
+<body>
+    <section class="add-regist">
+        <div class="regist">
+            <img src="{% static 'Vector 1.svg' %}" alt="" class="background-img">
+            <div class="regist2">
+                <p class="main-text">Регистрация</p>
+                <form class="labels" action="{% url 'users:registration' %}" method="post">
+                    {% csrf_token %}
+                    {% if form.errors %}
+                        <div class="error-message">
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            {% endfor %}
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+                    <label for="{{ form.email.id_for_label }}">
+                        Почта
+                    </label>
+                    {{ form.email }}
+                    <label for="{{ form.password1.id_for_label }}">
+                        Пароль
+                    </label>
+                    {{ form.password1 }}
+                    <label for="{{ form.password2.id_for_label }}">
+                        Повторите пароль
+                    </label>
+                    {{ form.password2 }}
+                    <button class = "btn-next" type="submit">Продолжить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

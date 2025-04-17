@@ -1,0 +1,108 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'createTeam.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-items">
+            <img src="/static/LOGO.svg" alt="" class="logo">
+            <a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project1">О проекте</a>
+        </div>
+        <button class="menu-toggle">Меню</button>
+        <nav class="desktop-nav">
+            <ul class="nav">
+                <li class="nav-item"><a href="{% url 'xakaton:xaki' %}" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutmirea' %}" class="nav-link">О миреа</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:registcommand' %}" class="nav-link">Команды</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project2">О проекте</a></li>
+                <li class="nav-item-link"><a href="{% url 'users:profile' %}" class="nav-link"><img src="/static/Group 89.svg" alt="" class="nav-profile-img"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2 class="main-text-up">
+            Создание команды
+        </h2>
+        <div class="main">
+            <div class="main-create-team">
+                <form action="" class="create-team">
+                    <div class="form-name-team">
+                        <p class="form-name">Название команды</p>
+                        <label for="name"><input class="input" type="name" id="name" placeholder="Введите название команды" required></label>
+                    </div>
+                    <div class="form-steks">
+                        <p class="text">Стек технологий</p>
+                        <label for="steks">
+                            <div class="custom-select">
+                                <div class="select-selected">Выбрать</div>
+                                <ul class="select-items">
+                                  <li value="stek1"><input type="checkbox"> C++</li>
+                                  <li value="stek2"><input type="checkbox"> C#</li>
+                                  <li value="stek3"><input type="checkbox"> C</li>
+                                  <li value="stek4"><input type="checkbox"> Java</li>
+                                  <li value="stek5"><input type="checkbox"> Dart</li>
+                                  <li value="stek6"><input type="checkbox"> JavaScript</li>
+                                </ul>
+                              </div>
+                          </label>
+                    </div>
+                </form>
+                <div class="gooodsave">
+                    <h3 class="goodluck">Удачи на хакатонах!</h3>
+                    <div class="main-save">
+                        <button class="main-button-save">Сохранить команду</button>
+                    </div>
+                </div>
+            </div>
+            <div class="main-about-team">
+                <h2 class="main-about-text-up">Расскажите о вашей команде</h2>
+                <p class="main-about-text">Например:
+                    Мы - команда молодых и креативных<br> разработчиков, дизайнеров и<br> предпринимателей, готовых к решению<br>    сложных задач с помощью технологий.</p>
+                <div class="main-about-textarea">
+                    <p class="textarea-text">Немного о команде:</p>
+                    <label for="comments"><textarea class="comment-input" name="comments" id="comments" required></textarea></label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.desktop-nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        const select = document.querySelector('.select-selected');
+        const items = document.querySelectorAll('.select-items li');
+        const selectItems = document.querySelector('.select-items');
+
+        // Initially hide the select-items
+        selectItems.classList.add('select-hide');
+
+        select.addEventListener('click', () => {
+            selectItems.classList.toggle('select-hide');
+        });
+
+        items.forEach(item => {
+            item.addEventListener('click', (event) => {
+                const checkbox = item.querySelector('input[type="checkbox"]');
+                checkbox.checked = !checkbox.checked;
+
+                // Update the text in select-selected
+                const selectedValues = Array.from(items).filter(item => item.querySelector('input[type="checkbox"]').checked)
+                    .map(item => item.textContent.trim()).join(', ');
+
+                select.innerText = selectedValues.length > 0 ? selectedValues : 'Выбрать';
+            });
+        });
+    </script>
+</body>
+</html>

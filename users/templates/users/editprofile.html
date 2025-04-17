@@ -1,0 +1,114 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование профиля</title>
+    <link rel="stylesheet" href="{% static 'profileRedact.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-items">
+            <img src="/static/LOGO.svg" alt="" class="logo">
+            <a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project1">О проекте</a>
+        </div>
+        <button class="menu-toggle">Меню</button>
+        <nav class="desktop-nav">
+            <ul class="nav">
+                <li class="nav-item"><a href="{% url 'xakaton:xaki' %}" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutmirea' %}" class="nav-link">О миреа</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:registcommand' %}" class="nav-link">Команды</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project2">О проекте</a></li>
+                <li class="nav-item-link"><a href="{% url 'users:profile' %}" class="nav-link"><img src="/static/Group 89.svg" alt="" class="nav-profile-img"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="main">
+            <div class="main-profile">
+                <div class="main-form1">
+                    <form method="POST" enctype="multipart/form-data" class="form">
+                        {% csrf_token %}
+                        <div class="form-header">
+                            <div class="form-fio">
+                                <div class="profile-photo-container">
+                                    {% if user.profile_photo %}
+                                        <img class="form-img-user" src="{{ user.profile_photo.url }}" alt="Profile Photo">
+                                    {% else %}
+                                        <img class="form-img-user" src="/static/Ellipse 1.svg" alt="">
+                                    {% endif %}
+                                    <div class="form-photo-upload">
+                                        <label for="{{ form.profile_photo.id_for_label }}" class="photo-upload-label">
+                                            Изменить фото
+                                        </label>
+                                        {{ form.profile_photo }}
+                                    </div>
+                                    <div class="form-name">
+                                        {{ form.full_name }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-fields">
+                            <div class="form-age">
+                                <p class="text">Дата рождения:</p>
+                                {{ form.date_of_birth }}
+                            </div>
+
+                            <div class="form-gender">
+                                <p class="text">Пол:</p>
+                                {{ form.gender }}
+                            </div>
+
+                            <div class="form-phone">
+                                <p class="text">Номер телефона:</p>
+                                {{ form.phone_number }}
+                            </div>
+
+                            
+                            <div class="form-steks">
+                                <p class="text">Стек технологий:</p>
+                                {{ form.technology_stack }}
+                            </div>
+
+                            <div class="form-group">
+                                <p class="text">Группа:</p>
+                                {{ form.group }}
+                            </div>
+
+                            <div class="form-course">
+                                <p class="text">Курс:</p>
+                                {{ form.course }}
+                            </div>
+
+                            <div class="form-student-number">
+                                <p class="text">Номер студенческого:</p>
+                                {{ form.student_number }}
+                            </div>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="submit" class="main-button-save">Сохранить изменения</button>
+                            <a href="{% url 'users:profile' %}" class="button-cancel">Отмена</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.desktop-nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

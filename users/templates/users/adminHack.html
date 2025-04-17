@@ -1,0 +1,217 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{% static 'adminHack.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <section>
+        <div class="main">
+            <div class="main-hackregist-left">
+                <h3 class="hackregist-left-text-up">
+                    Запись на хакатоны
+                </h3>
+                <div class="hackregist-left-block">
+                    <h6 class="left-block-text-up">
+                        Фильтры
+                    </h6>
+                    <div class="left-data-range">
+                        <h6 class="left-block-text">
+                            Дата проведения
+                        </h6>
+                        <div class="range">
+                            <p class="range-text">с</p>
+                            <label for="" class="rangelabel"><input type="text" class="input"></label>
+                            <p class="range-text">до</p>
+                            <label for="" class="rangelabel"><input type="text" class="input"></label>
+                        </div>
+                    </div>
+                    <div class="left-prize-range">
+                        <h6 class="left-block-text">Призовой фонд</h6>
+                        <div class="range2">
+                            <p class="range-text">с</p>
+                            <label for="" class="rangelabel"><input type="text" class="input"></label>
+                            <p class="range-text">до</p>
+                            <label for="" class="rangelabel"><input type="text" class="input"></label>
+                        </div>
+                    </div>
+                    <div class="steks">
+                        
+                        <div class="steks">
+                            <h6 class="left-block-text">
+                                Используемые технологии
+                            </h6>
+                            <div class="left-steks">
+                                <p class="steks-text">
+                                    <span class="stek-item">python</span>
+                                    <span class="stek-item">c#</span>
+                                    <span class="stek-item">c++</span>
+                                    <span class="stek-item">c</span>
+                                    <span class="stek-item">java</span><br>
+                                    <span class="stek-item">java script</span>
+                                    <span class="stek-item">kotlin</span>
+                                    <span class="stek-item">html</span>
+                                    <span class="stek-item">css</span>
+                                    <span class="stek-item">php</span>
+                                    <span class="stek-item">SQL</span>
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="hackinfo-right-people">
+                    <a href="#" class="hackinfo-right-button-people">Список пользователей</a>
+                </div>
+            </div>
+            <div class="main-hackinfo-right">
+                <button class="open-filter-button">Открыть фильтры</button>
+                <div class="hackinfo-right">
+                    <h4 class="hackinfo-right-text">Список хакатонов</h4>
+                    <button type="button" class="hackinfo-right-button">Добавить</button>
+                </div>
+                <div class="blocks">
+                    {% for hackathon in hackathons %}
+                    <div class="activhack-block" data-id="{{ hackathon.id }}">
+                        <h3 class="activhack-text-up">{{ hackathon.title }}</h3>
+                        <div class="activhack-info">
+                            <div class="info-left">
+                                <div class="left">
+                                    <p class="text">Дата проведения: {{ hackathon.start_date|date:"d.m.y" }} - {{ hackathon.end_date|date:"d.m.y" }}</p>
+                                </div>
+                                <div class="left">
+                                    <p class="text">Формат проведения: {{ hackathon.format }}</p>
+                                </div>
+                                <div class="left">
+                                    <p class="text">Призовой фонд: {{ hackathon.prize_fund }}</p>
+                                </div>
+                            </div>
+                            <div class="info-right">
+                                <p class="text">🔥{{ hackathon.title }}</p>
+                                <p class="text">{{ hackathon.description|linebreaksbr }}</p>
+                                <div class="button">
+                                    <a href="#" class="link-hack edit-hack">Редактировать</a>
+                                    <a href="#" class="link-hack delete-hack">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <!-- Add Hackathon Modal -->
+                <div class="modal" id="addHackathonModal">
+                    <div class="modal-content">
+                        <h2>Add Hackathon</h2>
+                        <form id="addHackathonForm">
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" id="title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="start_date">Start Date</label>
+                                <input type="date" id="start_date" name="start_date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="end_date">End Date</label>
+                                <input type="date" id="end_date" name="end_date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="format">Event Format</label>
+                                <select id="format" name="format" required>
+                                    <option value="online">Online</option>
+                                    <option value="offline">Offline</option>
+                                    <option value="hybrid">Hybrid</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="prize_fund">Prize Pool</label>
+                                <input type="text" id="prize_fund" name="prize_fund" placeholder="e.g. 700,000₽" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea id="description" name="description" required placeholder="Enter hackathon description"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit">Save</button>
+                                <button type="button" class="cancel">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                    
+                
+            </div>
+        </div>
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="hackregist-left-block">
+                    <h6 class="left-block-text-up">
+                        Фильтры
+                    </h6>
+                    <div class="left-data-range">
+                        <h6 class="left-block-text">
+                            Дата проведения
+                        </h6>
+                        <div class="range">
+                            <p class="range-text">с</p>
+                            <label for="" class="rangelabel"><input type="text" class="input"></label>
+                            <p class="range-text">до</p>
+                            <label for="" class="rangelabel"><input type="text" class="input"></label>
+                        </div>
+                    </div>
+                    <div class="left-prize-range">
+                        <h6 class="left-block-text">Призовой фонд</h6>
+                        <div class="range2">
+                            <p class="range-text">с</p>
+                            <label for="" class="rangelabel"><input type="text" class="input"></label>
+                            <p class="range-text">до</p>
+                            <label for="" class="rangelabel"><input type="text" class="input"></label>
+                        </div>
+                    </div>
+                        <div class="steks">
+                            <h6 class="left-block-text">
+                                Используемые технологии
+                            </h6>
+                            <div class="left-steks">
+                                <p class="steks-text">
+                                    <span class="stek-item">python</span>
+                                    <span class="stek-item">c#</span>
+                                    <span class="stek-item">c++</span>
+                                    <span class="stek-item">c</span>
+                                    <span class="stek-item">java</span><br>
+                                    <span class="stek-item">java script</span>
+                                    <span class="stek-item">kotlin</span>
+                                    <span class="stek-item">html</span>
+                                    <span class="stek-item">css</span>
+                                    <span class="stek-item">php</span>
+                                    <span class="stek-item">SQL</span>
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <button class="close-modal-button">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="{% static 'adminHack.js' %}">
+        
+    </script>
+</body>
+</html>
+
+
+
+
+

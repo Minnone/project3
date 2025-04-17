@@ -1,0 +1,27 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/changeLogin.css">
+</head>
+<body>
+    <section class="change-login">
+        <div class="login">
+            <img src="/static/Vector 1.svg" alt="" class="background-img">
+            <div class="login2">
+                <p class="main-text">Изменение логина</p>
+                <label for="" class="label-input">
+                    <input class="input" type="mail" id="mail-input" placeholder="Введите новый логин" required>
+                </label>
+                <p class="login-warning">Похоже этот логин уже занят</p>
+                <a href="{% url 'xakaton:xaki' %}" class="btn-next">Продолжить</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

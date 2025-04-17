@@ -1,0 +1,237 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/registComand.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-items">
+            <img src="/static/LOGO.svg" alt="" class="logo">
+            <a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project1">О проекте</a>
+        </div>
+        <button class="menu-toggle">Меню</button>
+        <nav class="desktop-nav">
+            <ul class="nav">
+                <li class="nav-item"><a href="{% url 'xakaton:xaki' %}" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutmirea' %}" class="nav-link">О миреа</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:registcommand' %}" class="nav-link">Команды</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project2">О проекте</a></li>
+                <li class="nav-item-link"><a href="{% url 'users:profile' %}" class="nav-link"><img src="/static/Group 89.svg" alt="" class="nav-profile-img"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+
+        <div class="main">
+
+            <div class="main-hackregist-left">
+                <h3 class="hackregist-left-text-up">
+                    Команды
+                </h3>
+                <div class="hackregist-left-block">
+                    <h6 class="left-block-text-up">
+                        Фильтры
+                    </h6>
+                    <div class="left-data-range">
+                        <h6 class="left-block-text">Состав команды</h6>
+                        <div class="range">
+                            <p class="text">Количество человек</p>
+                            <label for="team-size-select">
+                                <div class="custom-select">
+                                    <div class="select-selected">Выбрать</div>
+                                    <ul class="select-items" id="team-size-select">
+                                        <li value="stek1">1</li>
+                                        <li value="stek2">2</li>
+                                        <li value="stek3">3</li>
+                                        <li value="stek4">4</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="left-prize-range">
+                        <p class="text">Роль участника</p>
+                        <div class="range2">
+                            <label for="role-select">
+                                <div class="custom-select">
+                                    <div class="select-selected">Выбрать</div>
+                                    <ul class="select-items" id="role-select">
+                                        <li value="stek1">backend</li>
+                                        <li value="stek2">frontend</li>
+                                        <li value="stek3">tester</li>
+                                        <li value="stek4">analyst</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="steks">
+                        <h6 class="left-block-text">
+                            Используемые технологии
+                        </h6>
+                        <div class="left-steks">
+                            <p class="steks-text">
+                                <span class="stek-item">python</span>
+                                <span class="stek-item">c#</span>
+                                <span class="stek-item">c++</span>
+                                <span class="stek-item">c</span>
+                                <span class="stek-item">java</span><br>
+                                <span class="stek-item">java script</span>
+                                <span class="stek-item">kotlin</span>
+                                <span class="stek-item">html</span>
+                                <span class="stek-item">css</span>
+                                <span class="stek-item">php</span>
+                                <span class="stek-item">SQL</span>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="main-hackinfo-right">
+                <button class="open-filter-button">Открыть фильтры</button>
+
+                <div class="hackinfo-right">
+                    <h4 class="hackinfo-right-text">Список команд</h4>
+                    <div class="comandcreate">
+                        <a href="{% url 'xakaton:createteam' %}" class="createButton">Создать команду</a>
+                    </div>
+                </div>
+                <div class="blocks">
+                    <div class="activhack-block">
+                        <h3 class="activhack-text-up">Барбариски</h3>
+                        <div class="activhack-info">
+
+                            <div class="info-left">
+                                <div class="team-members">
+                                    <p class="team-text">5</p>
+                                    <img src="/static/account-icon 1.svg" alt="" class="team-members-icon">
+                                </div>
+                                <div class="team-steks">
+                                    <p class="team-text">с++   c   c#   kotlin   java script</p>
+                                </div>
+                                <div class="team-roles">
+                                    <p class="team-text">1|backend  1|frontend  1|teamlead 1|tester  1|business analyst  </p>
+                                </div>
+                            </div>
+                            <div class="info-right">
+                                <div class="info">
+                                    <a href="{% url 'xakaton:teamaccept'%}" class="button-go">Вступить</a>
+                                    <a href="{% url 'xakaton:aboutcommand'%}" class="button-info">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="activhack-block">
+                        <h3 class="activhack-text-up">Барбариски</h3>
+                        <div class="activhack-info">
+
+                            <div class="info-left">
+                                <div class="team-members">
+                                    <p class="team-text">5</p>
+                                    <img src="/static/account-icon 1.svg" alt="" class="team-members-icon">
+                                </div>
+                                <div class="team-steks">
+                                    <p class="team-text">с++   c   c#   kotlin   java script</p>
+                                </div>
+                                <div class="team-roles">
+                                    <p class="team-text">1|backend  1|frontend  1|teamlead 1|tester  1|business analyst  </p>
+                                </div>
+                            </div>
+                            <div class="info-right">
+                                <div class="info">
+                                    <a href="{% url 'xakaton:teamaccept'%}" class="button-go">Вступить</a>
+                                    <a href="{% url 'xakaton:aboutcommand'%}" class="button-info">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <h3 class="hackregist-left-text-up">Фильтры</h3>
+                <div class="hackregist-left-block">
+                    <h6 class="left-block-text-up">Состав команды</h6>
+                    <div class="left-data-range">
+                        <p class="text">Количество человек</p>
+                        <div class="custom-select">
+                            <div class="select-selected">Выбрать</div>
+                            <ul class="select-items select-hide">
+                                <li value="stek1">1</li>
+                                <li value="stek2">2</li>
+                                <li value="stek3">3</li>
+                                <li value="stek4">4</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="left-prize-range">
+                        <p class="text">Роль участника</p>
+                        <div class="custom-select">
+                            <div class="select-selected">Выбрать</div>
+                            <ul class="select-items select-hide">
+                                <li value="stek1">backend</li>
+                                <li value="stek2">frontend</li>
+                                <li value="stek3">tester</li>
+                                <li value="stek4">analyst</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="steks">
+                        <h6 class="left-block-text">
+                            Используемые технологии
+                        </h6>
+                        <div class="left-steks">
+                            <p class="steks-text">
+                                <span class="stek-item">python</span>
+                                <span class="stek-item">c#</span>
+                                <span class="stek-item">c++</span>
+                                <span class="stek-item">c</span>
+                                <span class="stek-item">java</span><br>
+                                <span class="stek-item">java script</span>
+                                <span class="stek-item">kotlin</span>
+                                <span class="stek-item">html</span>
+                                <span class="stek-item">css</span>
+                                <span class="stek-item">php</span>
+                                <span class="stek-item">SQL</span>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="close-modal-button">Закрыть</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+            <div class="footer-up">
+                <div class="footer-img-text">
+
+                    <img src="/static/LOGO.svg" alt="" class="footer-logo">
+                    <p class="footer-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex quidem consequuntur voluptatem mollitia?</p>
+                </div>
+                <div class="footer-links">
+                    <a href="" class="footer-vk"><img src="/static/Group 89.svg" alt="" class="footer-vk-img"></a>
+                    <a href="" class="footer-mirea"><img src="/static/Group 89.svg" alt="" class="footer-mirea-img"></a>
+                </div>
+            </div>
+            <div class="footer-down">
+                <hr class="footer-line">
+                <p class="footer-down-text">Copyright @2024</p>
+            </div>
+        </div>
+    </footer>
+    <script src="registComand.js"></script>
+</body>
+</html>

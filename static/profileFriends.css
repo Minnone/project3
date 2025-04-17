@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #340b68, #999999);
+    font-family: "Poppins", sans-serif;
+}
+
+html, body { height: 100%; margin: 0; }
+body { display: flex; flex-direction: column; }
+footer { margin-top: auto; } 
+
+section {
+    flex: 1; /* Позволяет секции занимать оставшееся пространство */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    background-color: rgba(7, 7, 7, 0.5);
+    padding: 10px;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; 
+}
+
+.nav-item {
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+.nav-items{
+    padding-left: 20px;
+    display: flex;
+    gap: 100px;
+}
+
+.nav-link,
+.nav-link-project1 {
+    display: block; 
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff; 
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+.nav-link-project1{
+    width: 105px;
+    padding-top: 20px;
+}
+
+.nav-link-project2 {
+    display: block; 
+    padding: 10px; 
+    text-decoration: none;
+    color: #ffffff; 
+    font-weight: 400;
+}
+
+.nav-item-link {
+    text-decoration: none;
+    
+}
+
+.logo {
+    max-width: 50px;
+}
+
+.menu-toggle {
+    display: none; /* Скрыть кнопку по умолчанию */
+    background-color: #302E2E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+}
+
+.main-form1 {
+    flex: 2; /* Занимает 2/3 ширины родительского контейнера */
+    /* Задаем максимальную ширину для более контролируемого поведения */
+    height: 700px;
+    background-color: #00000080;
+    padding: 20px; /* Паддинг для внутреннего контента */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень для глубины */
+    border-radius: 55px; /* Закругляем углы */
+    margin-right: 10px; /* Правый отступ для дистанции между формами */
+}
+
+.form-fio{
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.form-nickname{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.fio{
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.nickname{
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.blocksfriends {
+    display: flex;
+    justify-content: space-between; /* Разделяет блоки по сторонам */
+    
+    align-items: center; /* Выравнивание по вертикали */
+}
+
+.friendsearchblock {
+    flex: 3; /* Занимает равное пространство */
+    margin-right: 100px; /* Отступ справа */
+    padding-left: 20px;
+}
+
+.friendsacceptblock {
+    flex: 1; /* Занимает равное пространство */
+    padding-right: 30px;
+}
+
+.friendsearchfirst{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.friendssearch{
+    font-size: 13px;
+    background-color: #302E2F;
+    color: #ffffff;
+    border-radius: 55px;
+    padding: 7px;
+    flex-grow: 1; /* Позволяет полю поиска занимать больше пространства */
+    max-width: 400px;
+    min-width: 150px;
+}
+
+.myfriends{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.form-fio-friend{
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    border-radius: 55px;
+    padding: 10px; /* Добавляем внутренний отступ для контента */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #53258f
+}
+
+.form-img-friend{
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 50%; /* Закругляем края для создания эффекта круга */
+    object-fit: cover; /* Сохраняем пропорции изображения */
+}
+
+.fio-friend{
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.form-nickname-friend{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.nickname-friend{
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.friendslist{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #5f5c5c;
+    border-radius: 55px;
+    margin-top: 30px;
+    padding: 20px; /* Добавляем внутренний отступ для контента */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавляем легкую тень для глубины */
+}
+
+.friendsacceptblock{
+    display: flex;
+    flex-direction: column;
+}
+
+.friendacceptblock{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #5f5c5c;
+    border-radius: 55px;
+    margin-top: 50px;
+    padding: 20px; /* Добавляем внутренний отступ для контента */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавляем легкую тень для глубины */
+    height: 350px !important;/* Устанавливаем фиксированную высоту *//* Максимальная высота для ограничения */
+    overflow-y: auto; /* Добавляем прокрутку, если контент превышает максимальную высоту */
+    width: 400px;
+
+}
+
+.friendaccepttext{
+    font-size: 20px;
+    color: #ffffff;
+    padding-top: 30px;
+}
+
+.form-img-accept{
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 50%; /* Закругляем края для создания эффекта круга */
+    object-fit: cover; /* Сохраняем пропорции изображения */
+}
+
+.fio-accept{
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.form-nickname-accept{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.nickname-accept{
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.friend-actions{
+    display: flex;
+    gap: 20px;/* Разделяет кнопки по сторонам */
+}
+
+.accept-button, 
+.reject-button {
+    background-color: #302E2F;
+    color: #ffffff;
+    border-radius: 55px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Прокрутка для заявок */
+.friendacceptblock {
+    height: 300px;
+    overflow-y: auto;
+}

@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/static/profile.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-items">
+            <img src="/static/LOGO.svg" alt="" class="logo">
+            <a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project1">О проекте</a>
+        </div>
+        <button class="menu-toggle">Меню</button>
+        <nav class="desktop-nav">
+            <ul class="nav">
+                <li class="nav-item"><a href="{% url 'xakaton:xaki' %}" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutmirea' %}" class="nav-link">О миреа</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:registcommand' %}" class="nav-link">Команды</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project2">О проекте</a></li>
+                <li class="nav-item-link"><a href="{% url 'users:profile' %}" class="nav-link"><img src="/static/Group 89.svg" alt="" class="nav-profile-img"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="main">
+            <div class="main-notif">
+                <p class="main-text-notif">Уведомление</p>
+                <img src="/static/icons8-уведомление-24 1.svg" alt="" class="main-img-notif">
+            </div>
+            <div class="main-profile">
+                <div class="main-form1">
+                    <form class="form">
+                        <div class="form-img-name">
+                            <div class="form-fio">
+                                {% if user.profile_photo %}
+                                    <img class="form-img-user" src="{{ user.profile_photo.url }}" alt="Profile Photo">
+                                {% else %}
+                                    <img class="form-img-user" src="/static/Ellipse 1.svg" alt="">
+                                {% endif %}
+                                <div class="form-nickname">
+                                    <p class="fio">{{ user.first_name }} {{ user.last_name }}</p>
+                                    <p class="nickname">{{ user.username }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-change-button">
+                            <a href="{% url 'users:editprofile' %}" class="change-button">Изменить профиль</a>
+                            <a href="{% url 'users:logout' %}" class="change-button" style="margin-top: 10px;">Выйти</a>
+                        </div>
+                        <div class="form-age">
+                            <p class="text">Дата рождения: {{ user.date_of_birth|date:"d.m.Y" }}</p>
+                        </div>
+                        <div class="form-gender">
+                            <p class="text">Пол: {{ user.get_gender_display }}</p>
+                        </div>
+                        <div class="form-mail">
+                            <p class="text">Email: {{ user.email }}</p>
+                        </div>
+                        <div class="form-phone">
+                            <p class="text">Телефон: {{ user.phone_number }}</p>
+                        </div>
+                        <div class="form-steks">
+                            <p class="text">Стек технологий:</p>
+                            <p class="text">{{ user.technology_stack }}</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="main-form-container">
+                    <div class="main-form2">
+                        <form class="form2">
+                            <h2 class="form2-info">Информация</h2>
+                            <div class="form2-group">
+                                <p class="text">Группа 0000-00-00</p>
+                            </div>
+                            <div class="form2-course">
+                                <p class="text">Курс</p>
+                            </div>
+                            <div class="form2-student-number">
+                                <p class="text">Личный номер студента</p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="main-form3">
+                        <h2 class="form3-active">Активность пользователя</h2>
+                        <div class="form3-links">
+                            <div class="back-change">
+                                <a href="#" class="form3-paricitipate">Участие в хакатонах</a>
+                            </div>
+
+                            <a href="#" class="form3-nexthack">Предстоящий хакатон</a>
+                            <div class="back-change">
+                                <a href="#" class="form3-paricitipate">Участие в хакатонах</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="notificationModal" class="modal">
+                <div class="modal-content">
+                    <div id="notificationList">
+                        <!-- Уведомления будут добавляться сюда -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.desktop-nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

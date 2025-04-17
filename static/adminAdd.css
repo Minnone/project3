@@ -1,0 +1,425 @@
+* {
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+body{
+    background: -webkit-linear-gradient(180deg, #340b68,#999999);/* Chrome 10-25, Safari 5.1-6 */                          
+    background: linear-gradient(180deg, #340b68,#999999);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */     
+    font-family: "Poppins",sans-serif;                                        
+}
+
+html, body { height: 100%; margin: 0; }
+body { display: flex; flex-direction: column; }
+footer { margin-top: auto; } 
+
+section {
+    flex: 1; /* Позволяет секции занимать оставшееся пространство */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+}
+
+section{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    background-color: rgba(7, 7, 7, 0.5);
+    padding: 10px;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; 
+}
+
+.nav-item {
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+.nav-items{
+    padding-left: 20px;
+    display: flex;
+    gap: 100px;
+}
+
+.nav-link,
+.nav-link-project1 {
+    display: block; 
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff; 
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+.nav-link-project1{
+    width: 105px;
+    padding-top: 20px;
+}
+
+.nav-link-project2 {
+    display: block; 
+    padding: 10px; 
+    text-decoration: none;
+    color: #ffffff; 
+    font-weight: 400;
+}
+
+.nav-item-link {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.logo {
+    max-width: 50px;
+}
+
+.menu-toggle {
+    display: none; /* Скрыть кнопку по умолчанию */
+    background-color: #302E2E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*main*/
+
+.main-text-up{
+    font-size: 40px;
+    color: #ffffff;
+    padding-left: 45px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.main{
+    padding-left: 80px;
+    padding-right: 100px;
+    display: flex;
+    gap: 300px;
+}
+
+.main-create-team{
+    display: flex;
+    flex-direction: column;
+    gap:55px;
+}
+
+.form-name-team{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+
+.form-name{
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.form-steks{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+
+.create-team{
+    padding: 50px;
+    border-radius: 25px;
+    width: 100%;
+    background-color: #00000099;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.text{
+    font-size: 24px;
+    color: #fff;
+}
+
+.main-save{
+    display: flex;
+    justify-content: start;
+    
+}
+
+.main-button-save{
+    font-size: 30px;
+    background-color: #00000099;
+    color: #ffffff;
+    padding: 15px 35px 15px 35px;
+    border-radius: 55px;
+}
+
+.input {
+    font-size: 20px; /* Размер шрифта */
+    background-color: #0000004D; /* Цвет фона */
+    border-radius: 25px; /* Закругление углов */
+    padding: 10px; /* Отступ внутри элемента */
+    border: none; /* Убираем стандартную рамку для input */
+    color: #ffffff; /* Цвет текста */
+    width: 100%; /* Устанавливаем ширину в 100% контейнера, если нужно */
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
+}
+
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 300px; /* Измените ширину по необходимости */
+    color: #fff;
+  }
+  
+  .select-selected {
+    font-size: 16px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.3); /* Цвет фона для выбранного элемента */
+  }
+  
+  .select-items {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон */
+    border-radius: 25px; /* Закруглённые углы */
+    bottom: 100%; /* Размещаем список над выбранным элементом */
+    left: 0; /* Выровнено по левому краю выбранного элемента */
+    z-index: 1;
+    width: 100%; /* Занять полную ширину */
+    max-height: 200px;
+    overflow-y: auto; /* Прокрутка, если элементов слишком много */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавим легкую тень для эффекта */
+  }
+  
+  .select-items li {
+    padding: 10px;
+    cursor: pointer;
+    list-style: none;
+    color: #fff; /* Цвет текста */
+    display: flex; /* Используем flexbox для выравнивания */
+    align-items: center; /* Выравниваем по центру */
+  }
+  
+  .select-items li:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Цвет при наведении */
+  }
+  
+  .select-hide {
+    display: none; /* Скрыть элементы по умолчанию */
+  }
+
+  input[type="checkbox"] {
+    appearance: none; /* Убираем стандартный стиль чекбокса */
+    width: 20px; /* Ширина чекбокса */
+    height: 20px; /* Высота чекбокса */
+    border-radius: 50%; /* Делаем чекбокс кругом */
+    border: 2px solid #cccccc; /* Цвет рамки кругового чекбокса */
+    margin-right: 10px; /* Отступ от текста */
+    outline: none; /* Убираем обводку */
+    cursor: pointer; /* Курсор при наведении */
+    position: relative; /* Позиционирование для псевдоэлементов */
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #2b8a3b; /* Цвет фона при выборе */
+  }
+
+.main-about-team{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.main-about-text-up{
+    font-size: 40px;
+    color: #fff;
+}
+
+.main-about-text{
+    font-size: 26px;
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+.main-about-textarea {
+    background-color: #340b68; /* Цвет фона блока */
+    border-radius: 25px; /* Закругление углов */
+    padding: 30px; /* Внутренние отступы вокруг блока */
+    box-sizing: border-box; /* Учитываем отступы в размерах блока */
+}
+
+.comment-input {
+    width: 400px; /* Устанавливаем ширину в 100% родительского блока */
+    height: 350px; /* Увеличиваем высоту textarea (можете изменить по желанию) */
+    border-radius: 15px; /* Закругление углов textarea */
+    padding: 40px; /* Внутренние отступы внутри textarea */
+    margin: 10px 0; /* Внешние отступы сверху и снизу */
+    box-sizing: border-box; /* Учитываем внутренние отступы в ширине textarea */
+    background-color: #ffffff; /* Непрозрачный белый цвет фона */
+    color: #000; /* Цвет текста - черный */
+    border: none; /* Убираем рамку */
+    resize: none; /* Убираем возможность изменения размера */
+    font-size: 20px;
+}
+
+/* Когда textarea получает фокус */
+.comment-input:focus {
+    outline: none; /* Убираем стандартную обводку при фокусе */
+    border: 2px solid #999; /* Добавляем рамку при фокусе */
+}
+
+.textarea-text{
+    margin: 22px 33px 30px 33px;
+    color: #fff;
+        font-size: 24px;
+}
+
+
+.goodluck{
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.container {
+    display: flex; /* Размещаем блоки горизонтально по умолчанию */
+    gap: 20px; /* Отступ между блоками */
+  }
+  
+  .left-block, .right-block {
+    flex: 1; /* Каждый блок занимает равное пространство */
+  }
+  
+
+@media (max-width: 3000px){
+    .nav-link-project2 {
+        display: none; 
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+    .main{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 850px) {
+    .nav {
+        gap: 40px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column; /* Блоки располагаются вертикально */
+        gap: 15px; /* Отступ между блоками */
+      }
+
+    section {
+        flex: 1; /* Позволяет секции занимать оставшееся пространство */
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+    }
+    
+    .container {
+        gap: 10px; /* Уменьшаем отступ между блоками */
+      }
+
+    .menu-toggle {
+        display: block; /* Показать кнопку на мобильных экранах */
+        
+    }
+
+    .nav-link-project1 {
+        display: none; 
+        
+    }
+
+    .nav-link-project2 {
+        display: block; 
+        
+    }
+
+    .desktop-nav {
+        display: none; /* Скрыть навигацию по умолчанию */
+        flex-direction: column; /* Расположить элементы вертикально */
+    }
+
+    .desktop-nav.active {
+        display: flex; /* Показать навигацию при активации */
+    }
+
+    .nav{
+        gap: 10px;
+    }
+    .select-selected{
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 560px) {
+    .form-name-team{
+        align-items: start;
+        flex-direction: column;
+    }
+    .form-steks{
+        align-items: start;
+        flex-direction: column;
+        
+    }
+    .select-selected{
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    body{
+        background-repeat: no-repeat;
+    }
+
+    .select-selected{
+        max-width: 30%;
+    }
+
+    
+
+    .header {
+        
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .main {
+        flex-direction: column; /* Блоки располагаются вертикально */
+        gap: 15px; /* Отступ между блоками */
+      }
+      .left-block, .right-block {
+        flex: 0 0 auto; /* Блоки занимают только необходимое пространство */
+      }
+
+}

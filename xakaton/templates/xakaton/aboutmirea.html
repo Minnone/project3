@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'aboutMirea.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-items">
+            <img src="/static/LOGO.svg" alt="" class="logo">
+            <a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project1">О проекте</a>
+        </div>
+        <button class="menu-toggle">Меню</button>
+        <nav class="desktop-nav">
+            <ul class="nav">
+                <li class="nav-item"><a href="{% url 'xakaton:xaki' %}" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutmirea' %}" class="nav-link">О миреа</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:registcommand' %}" class="nav-link">Команды</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project2">О проекте</a></li>
+                <li class="nav-item-link"><a href="{% url 'users:profile' %}" class="nav-link"><img src="/static/Group 89.svg" alt="" class="nav-profile-img"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="main-informatoin">
+            <div class="main-text">
+                <h3 class="main-text-up">МИРЭА — Российский технологический университет </h3>
+                <p class="main-text-text">(полное название —  Федеральное государственное бюджетное<br>образовательное учреждение высшего образования) — высшее учебное заведение в Москве.<br>Образован в 2015 году в результате объединения МИРЭА, МГУПИ, МИТХТ имени М. В. Ломоносова и ряда образовательных, научных, конструкторских и производственных организаций.</p>
+            </div>
+            <div class="main-img">
+                <img src="/static/РТУ_МИРЭА_логотип 1.svg" alt="" class="main-img-mirea">
+                <a href="#" class="go-to-mirea">Перейти на сайт</a>
+            </div>
+        </div>
+        <div class="mirea-img-background"></div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-up">
+                <div class="footer-img-text">
+
+                    <img src="/static/LOGO.svg" alt="" class="footer-logo">
+                    <p class="footer-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex quidem consequuntur voluptatem mollitia?</p>
+                </div>
+                <div class="footer-links">
+                    <a href="" class="footer-vk"><img src="/static/Group 89.svg" alt="" class="footer-vk-img"></a>
+                    <a href="" class="footer-mirea"><img src="/static/Group 89.svg" alt="" class="footer-mirea-img"></a>
+                </div>
+            </div>
+            <div class="footer-down">
+                <hr class="footer-line">
+                <p class="footer-down-text">Copyright @2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.desktop-nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

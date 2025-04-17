@@ -1,0 +1,42 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    <section class="add-regist">
+        <div class="regist">
+            <img src="{% static 'Vector 1.svg' %}" alt="" class="background-img">
+            <div class="regist2">
+                <p class="main-text">Вход</p>
+                <p class="main-text-down">Авторизируйтесь для получения доступа</p>
+                <form class="labels" action="{% url 'users:login' %}" method="post">
+                    {% csrf_token %}
+                    {% if form.errors %}
+                        <div class="error-message">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+                    <label for="{{form.username.id_for_label}}" class="label-input"></label>
+                        {{ form.username }}
+                    <label for="{{form.password.id_for_label}}" class="label-input"></label>
+                        {{ form.password }}
+                    <button class = "btn-next" type="submit">Войти</button>
+                </form>
+                <div class="register-info">
+                    <a href="#" class="vkregist"><img src="{% static 'Group 89.svg' %}" alt="" class="vk-img"></a>
+                    <a href="{% url 'users:registration' %}" class="register">Регистрация</a>
+                    <a href="{% url 'users:restorepassword' %}" class="passwordnew">Восстановить пароль</a>
+                    <a href="#" class="mirea-regist"><img src="{% static 'Group 89.svg' %}" alt="" class="mirea-regist"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

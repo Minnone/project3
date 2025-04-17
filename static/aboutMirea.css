@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #340b68, #999999);
+    font-family: "Poppins", sans-serif;
+}
+
+html, body { height: 100%; margin: 0; }
+body { display: flex; flex-direction: column; }
+footer { margin-top: auto; } 
+
+section {
+    flex: 1; /* Позволяет секции занимать оставшееся пространство */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    background-color: rgba(7, 7, 7, 0.5);
+    padding: 10px;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; 
+}
+
+.nav-item {
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+.nav-items{
+    padding-left: 20px;
+    display: flex;
+    gap: 100px;
+}
+
+.nav-link,
+.nav-link-project1 {
+    display: block; 
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff; 
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+.nav-link-project1{
+    width: 105px;
+    padding-top: 20px;
+}
+
+.nav-link-project2 {
+    display: block; 
+    padding: 10px; 
+    text-decoration: none;
+    color: #ffffff; 
+    font-weight: 400;
+}
+
+.nav-item-link {
+    text-decoration: none;
+    
+}
+
+.logo {
+    max-width: 50px;
+}
+
+.menu-toggle {
+    display: none; /* Скрыть кнопку по умолчанию */
+    background-color: #302E2E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Main Section */
+.main-informatoin {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-text {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    max-width: 768px;
+}
+
+.main-img {
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-text-up {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 800;
+    padding-bottom: 20px;
+}
+
+.main-text-text {
+    font-size: 20px;
+    font-weight: 800; 
+    color: #fff;
+    line-height: 1.7;
+}
+
+.go-to-mirea {
+    display: block;
+    font-size: 13px;
+    color: #fff;
+    background-color: #302E2E;
+    padding: 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 15px;
+    width: 50%;
+}
+
+.mirea-img-background {
+    background-image: url('mirea.svg');
+    background-size: cover; /* Сохраняем масштабирование изображения */
+    background-position: center;
+    height: 500px; 
+    width: 100%;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    color: white; 
+    transition: background-size 0.5s ease; 
+}
+
+.img-background {
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+}
+
+.footer {
+    background-color: rgb(32, 30, 30);
+    padding-top: 20px; /* Должен быть минимальным отступом, если это необходимо */
+}
+
+.footer-up {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-logo {
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.footer-text {
+    color: #ffffff;
+    font-size: 13px;
+    max-width: 500px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-down-text {
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+     
+    align-items: center; 
+    padding-right: 20px;
+    padding-bottom: 20px;
+    gap: 10px;
+}
+
+.footer-line {
+    margin: 0;
+    color: #000;
+}
+
+/* Media Queries */
+@media (max-width: 3000px){
+    .nav-link-project2 {
+        display: none; 
+    }
+}
+
+@media (max-width: 1024px) {
+    section {
+        flex: 1; /* Позволяет секции занимать оставшееся пространство */
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+    }
+
+    .mirea-img-background {
+        min-height: calc(100vh - (footer offsetHeight + header offsetHeight)); /* Учитываем ту же высоту для background */
+        background-repeat: no-repeat;
+        background-size: cover; /* Заполнение фона */
+    }
+}
+
+@media (max-width: 850px) {
+    .nav {
+        gap: 40px; 
+    }
+
+    section {
+        flex: 1; /* Позволяет секции занимать оставшееся пространство */
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+    }
+}
+
+@media (max-width: 768px) {
+
+    
+    section {
+        flex: 1; /* Позволяет секции занимать оставшееся пространство */
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+    }
+
+    .mirea-img-background {
+        min-height: calc(100vh - (footer offsetHeight + header offsetHeight)); /* Учитываем ту же высоту для background */
+        background-repeat: no-repeat;
+        background-size: cover; /* Заполнение фона */
+    }
+    
+    .menu-toggle {
+        display: block; /* Показать кнопку на мобильных экранах */
+        
+    }
+
+    .nav-link-project1 {
+        display: none; 
+        
+    }
+
+    .nav-link-project2 {
+        display: block; 
+        
+    }
+
+    .desktop-nav {
+        display: none; /* Скрыть навигацию по умолчанию */
+        flex-direction: column; /* Расположить элементы вертикально */
+    }
+
+    .desktop-nav.active {
+        display: flex; /* Показать навигацию при активации */
+    }
+
+    .main-informatoin {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .main-text, .main-img {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .main-text-up {
+        font-size: 24px;
+    }
+
+    .main-text-text {
+        font-size: 18px;
+    }
+
+    .go-to-mirea {
+        width: 90%;
+    }
+
+    
+    
+    .nav{
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body{
+        background-repeat: no-repeat;
+    }
+
+    section {
+        flex: 1; /* Позволяет секции занимать оставшееся пространство */
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+    }
+
+
+    .header {
+        
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .mirea-img-background {
+        height: 150px; /* Уменьшаем высоту для маленьких экранов */
+        background-repeat: no-repeat;
+    }
+
+    .main-img-mirea {
+        width: 80%;
+    }
+
+    .nav-item {
+        padding-top: 0;
+    }
+
+    .main-text-up {
+        font-size: 20px;
+    }
+
+    .main-text-text {
+        font-size: 16px;
+    }
+
+    .go-to-mirea {
+        font-size: 12px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-up {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-text {
+        padding-left: 20px;
+    }
+
+    .footer-links{
+        padding-left: 20px;
+    }
+
+    .logo{
+        display: none;
+    }
+}

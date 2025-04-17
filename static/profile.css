@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #340b68, #999999);
+    font-family: "Poppins", sans-serif;
+}
+
+html, body { height: 100%; margin: 0; }
+body { display: flex; flex-direction: column; }
+footer { margin-top: auto; } 
+
+section {
+    flex: 1; /* Позволяет секции занимать оставшееся пространство */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    background-color: rgba(7, 7, 7, 0.5);
+    padding: 10px;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; 
+}
+
+.nav-item {
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+.nav-items{
+    padding-left: 20px;
+    display: flex;
+    gap: 100px;
+}
+
+.nav-link,
+.nav-link-project1 {
+    display: block; 
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff; 
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+.nav-link-project1{
+    width: 105px;
+    padding-top: 20px;
+}
+
+.nav-link-project2 {
+    display: block; 
+    padding: 10px; 
+    text-decoration: none;
+    color: #ffffff; 
+    font-weight: 400;
+}
+
+.nav-item-link {
+    text-decoration: none;
+    
+}
+
+.logo {
+    max-width: 50px;
+}
+
+.menu-toggle {
+    display: none; /* Скрыть кнопку по умолчанию */
+    background-color: #302E2E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* main */
+
+.main{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.main-notif{
+    display: flex;
+    justify-content: end;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    align-items: center;
+    padding-right: 50px;
+    gap: 20px;
+}
+
+.main-text-notif{
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.main-profile {
+    display: flex; /* Используем flexbox для расположения внутренних элементов */
+    flex-wrap: wrap; /* Позволяем элементам переноситься на новую строку, если не хватает места */
+    margin: 20px; /* Устанавливаем отступы для контейнера */
+    gap: 60px;
+}
+
+.main-form-container {
+    display: flex;
+    flex-direction: column; /* Устанавливаем вертикальное расположение для форм 2 и 3 */
+    flex: 1; /* Занимает 1/3 ширины контейнера */
+    max-width: 100%; /* Задаем максимальную ширину */
+    gap: 20px;
+}
+
+.main-form1 {
+    flex: 2; /* Занимает 2/3 ширины родительского контейнера */
+    max-width: 50%; /* Задаем максимальную ширину для более контролируемого поведения */
+    height: 600px;
+    background-color: #f9f9f9; /* Задаем цвет фона для визуального разделения */
+    padding: 20px; /* Паддинг для внутреннего контента */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Добавляем тень для глубины */
+    border-radius: 55px; /* Закругляем углы */
+    margin-right: 10px; /* Правый отступ для дистанции между формами */
+}
+
+.form{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.text{
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.form-fio{
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.form-nickname{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.fio{
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.nickname{
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.change-button{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #302E2E; 
+    width: 30%;
+    border-radius: 55px;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.main-form1,
+.main-form2,
+.main-form3 {
+    flex: 2; /* Для первой формы, остальные могут быть flex: 1 */
+    max-width: 50%; /* Задаем максимальную ширину для формы 1 */
+    height: 600px; /* Высота для первой формы */
+    background-color: #00000080; /* Обновленный цвет фона */
+    padding: 20px; /* Паддинг для внутреннего контента */
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); /* Добавляем тень для глубины */
+    border-radius: 55px; /* Закругляем углы для первой формы */
+    margin-right: 10px; /* Правый отступ для дистанции между формами */
+}
+
+.main-form2,
+.main-form3 {
+    flex: 1; /* Каждая форма занимает 1/3 ширины контейнера */
+    max-width: 100%; /* Устанавливаем максимальную ширину */
+    height: 100%; /* Высота для остальных форм */
+    background-color: #00000080; /* Обновленный цвет фона для формы 2 и 3 */
+    padding: 20px; /* Паддинг для внутреннего контента */
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); /* Добавляем тень */
+    border-radius: 55px; /* Закругляем углы для остальных форм */
+    margin-bottom: 10px; /* Отступ снизу для визуального разделения */
+}
+
+.form2-info{
+    font-size: 32px;
+    color: white;
+}
+
+.form2{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+.main-form3{
+    
+    padding-left: 40px;
+    padding-top: 35px;
+}
+
+.form3-active{
+    font-size: 32px;
+    padding-bottom: 30px;
+    color: #ffffff;
+}
+
+.form3-links{
+    display: flex;
+    gap:25px;
+    flex-direction: column;
+}
+
+.form3-paricitipate, .form3-nexthack, .form3-lasthack{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.form3-nexthack{
+    padding-left: 20px;
+}
+
+.back-change {
+    background-color: #D9D9D91A;
+    padding: 10px; /* Добавить паддинг для отступа текста от краёв */
+    width: 100%; /* Устанавливаем ширину на 100% */
+    box-sizing: border-box; /* Учитываем паддинг при расчёте ширины */
+    border-radius: 55px;
+}
+
+.back-change a {
+    display: block; /* Заставляем ссылку занимать всю ширину контейнера */
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 10px; /* Паддинг вокруг текста для удобства */
+}
+@media (max-width: 3000px){
+    .nav-link-project2 {
+        display: none; 
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-profile {
+        display: flex;
+        flex-direction: column; /* Располагаем формы в столбик */
+    }
+
+    .main-form1 {
+        max-width: 100%; /* Занимает всю ширину */
+        margin-bottom: 20px; /* Отступ снизу для разделения */
+    }
+
+    .main-form2,
+    .main-form3 {
+        display: flex; /* Используем Flex для форм 2 и 3 */
+        justify-content: space-between; /* Распределяем пространство между формами */
+        gap: 20px; /* Расстояние между формами */
+        flex: 1; /* Даем им одинаковую ширину */
+    }
+
+    .main-form2 {
+        order: 1; /* Первая форма будет слева */
+    }
+
+    .main-form3 {
+        order: 2; /* Вторая форма будет справа */
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 850px) {
+    .nav {
+        gap: 40px; 
+    }
+
+    section {
+        flex: 1; /* Позволяет секции занимать оставшееся пространство */
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-profile {
+        flex-direction: column; /* На малых экранах формы будут располагаться вертикально */
+    }
+
+    .main-form1, .main-form2, .main-form3 {
+        max-width: 100%; /* Формы занимают всю ширину */
+        margin-right: 0; /* Убираем отступ справа */
+        margin-bottom: 10px; /* Установим отступ снизу для каждой формы */
+    }
+    
+    section {
+        flex: 1; /* Позволяет секции занимать оставшееся пространство */
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+    }
+    
+    .menu-toggle {
+        display: block; /* Показать кнопку на мобильных экранах */
+        
+    }
+
+    .nav-link-project1 {
+        display: none; 
+        
+    }
+
+    .nav-link-project2 {
+        display: block; 
+        
+    }
+
+    .desktop-nav {
+        display: none; /* Скрыть навигацию по умолчанию */
+        flex-direction: column; /* Расположить элементы вертикально */
+    }
+
+    .desktop-nav.active {
+        display: flex; /* Показать навигацию при активации */
+    }
+
+    .nav{
+        gap: 10px;
+    }
+}
+
+@media (max-width: 560px) {
+    .form3-paricitipate, .form3-nexthack, .form3-lasthack{
+        font-size: 20px;
+    }
+
+    .form3-active{
+        font-size: 24px;
+        padding-bottom: 10px;
+    }
+
+    .form2-info{
+        font-size: 24px;
+    }
+
+    .text{
+        font-size: 20px;
+    }
+
+    .fio{
+        font-size: 24px;
+        color: #ffffff;
+    }
+    
+    .nickname{
+        font-size: 20px;
+        color: #ffffff;
+    }
+
+    .form-fio{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    .change-button {
+        width: 50%; /* Устанавливаем ширину на 50% */
+        padding: 12px; /* Увеличиваем паддинг для большей высоты */
+        font-size: 18px; /* Увеличиваем размер шрифта для лучшего отображения */
+    }
+}
+
+@media (max-width: 480px) {
+    body{
+        background-repeat: no-repeat;
+    }
+
+    .form{
+        padding: 0;
+    }
+    
+    section {
+        flex: 1; /* Позволяет секции занимать оставшееся пространство */
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        background: linear-gradient(180deg, #340b68, #999999); /* Убедитесь, что фон добавлен */
+    }
+
+    .form-fio {
+        flex-direction: column; /* Изменяем направление flex на вертикальное */
+        align-items: center; /* Центрируем содержимое по горизонтали */
+    }
+
+    .form-img-user {
+        margin-bottom: 10px; /* Добавляем отступ снизу для пространства между изображением и текстом */
+    }
+
+    .header {
+        
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .logo{
+        display: none;
+    }
+}

@@ -1,0 +1,98 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/static/aboutProject.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-items">
+            <img src="/static/LOGO.svg" alt="" class="logo">
+            <a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project1">О проекте</a>
+        </div>
+        <button class="menu-toggle">Меню</button>
+        <nav class="desktop-nav">
+            <ul class="nav">
+                <li class="nav-item"><a href="{% url 'xakaton:xaki' %}" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutmirea' %}" class="nav-link">О миреа</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:registcommand' %}" class="nav-link">Команды</a></li>
+                <li class="nav-item"><a href="{% url 'xakaton:aboutproject' %}" class="nav-link-project2">О миреа</a></li>
+                <li class="nav-item-link"><a href="{% url 'users:profile' %}" class="nav-link"><img src="/static/Group 89.svg" alt="" class="nav-profile-img"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="main-texts">
+            <h2 class="text-up">
+                Онлайн платформа для записи на хакатоны
+            </h2>
+            <p class="text-main">
+                Наш проект создан для упрощения записи на хакатоны для студентов МИРЭА.
+            </p>
+            <h3 class="text-features">
+                Наши преимущества
+            </h3>
+        </div>
+
+        <div class="features-blocks">
+            <div class="features-block">
+                <h4 class="features-main">
+                    Быстрая запись
+                </h4>
+                <p class="features-text">
+                    С помощью фильтров и описания хакатона, пользователь может определить подходящий ему вариант
+                </p>
+            </div>
+            <div class="features-block">
+                <h4 class="features-main">
+                    Создание и поиск команд
+                </h4>
+                <p class="features-text">
+                    Наша платформа дает возможность присоединиться к команде, а так же создать собственную
+                </p>
+            </div>
+            <div class="features-block">
+                <h4 class="features-main">
+                    Профиль
+                </h4>
+                <p class="features-text">
+                    Данные пользователя взяты с портала РТУ МИРЭА, что облегчает регистрацию и заполнение информации пользователя в личном кабинете
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+            <div class="footer-up">
+                <div class="footer-img-text">
+                    <img src="/static/LOGO.svg" alt="" class="footer-logo">
+                    <p class="footer-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex quidem consequuntur voluptatem mollitia?</p>
+                </div>
+                <div class="footer-links">
+                    <a href="" class="footer-vk"><img src="/static/Group 89.svg" alt="" class="footer-vk-img"></a>
+                    <a href="" class="footer-mirea"><img src="/static/Group 89.svg" alt="" class="footer-mirea-img"></a>
+                </div>
+            </div>
+            <div class="footer-down">
+                <hr class="footer-line">
+                <p class="footer-down-text">Copyright @2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.desktop-nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
