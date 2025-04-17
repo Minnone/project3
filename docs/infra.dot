@@ -1,0 +1,21 @@
+digraph INFRA {
+  node [ color = "black", fillcolor = "#E6E6E6", height =1, style = "filled,bold,rounded", fontname = "Arial" ];
+  "PostGISAdapter" [ label = "PostGISAdapter
+(AWS::Lambda::Function)", shape =rectangle, fillcolor = "#B7E0FF" ];
+  "DatabaseWrapper" [ label = "DatabaseWrapper
+(AWS::RDS::DBInstance)", shape =cylinder, fillcolor = "#FFCFB3" ];
+  "SOCKSConnection" [ label = "SOCKSConnection
+(AWS::EC2::NetworkInterface)" ];
+  "SOCKSHTTPSConnection" [ label = "SOCKSHTTPSConnection
+(AWS::EC2::NetworkInterface)" ];
+  "SOCKSProxyManager" [ label = "SOCKSProxyManager
+(AWS::EC2::NetworkAcl)" ];
+  "PlatformDirs" [ label = "PlatformDirs
+(AWS::S3::Bucket)", shape =cylinder, fillcolor = "#FFF5CD" ];
+  "SafeFileCache" [ label = "SafeFileCache
+(AWS::S3::Bucket)", shape =cylinder, fillcolor = "#FFF5CD" ];
+  "DatabaseWrapper" -> "PostGISAdapter";
+  "SOCKSHTTPSConnection" -> "SOCKSConnection";
+  "SOCKSProxyManager" -> "SOCKSConnection";
+  "SOCKSProxyManager" -> "SOCKSHTTPSConnection";
+}
